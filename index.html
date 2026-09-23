@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy.Ristevski UG | Professionelle Reinigung & Gebäudeservice in Nürnberg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1A5F7A;
+            --secondary-blue: #0288D1;
+            --accent-teal: #00BCD4;
+            --light-bg: #F4F8FA;
+            --white: #FFFFFF;
+            --dark-text: #1E293B;
+            --muted-text: #64748B;
+            --border-color: #E2E8F0;
+            --shadow: 0 10px 25px -5px rgba(26, 95, 122, 0.1), 0 8px 10px -6px rgba(26, 95, 122, 0.05);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 8px 14px;
+            border-radius: 12px;
+            letter-spacing: 1px;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--secondary-blue);
+            font-size: 0.85rem;
+            display: block;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary-blue);
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(2, 136, 209, 0.3);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(2, 136, 209, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #E0F2FE 0%, #F0F9FF 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--secondary-blue);
+            background: linear-gradient(120deg, var(--primary-blue), var(--accent-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--muted-text);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .stat-card i {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+        }
+
+        .stat-card div {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(2, 136, 209, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 136, 209, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-bg);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-card-main {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--white);
+            padding: 15px 25px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .floating-badge i {
+            font-size: 2rem;
+            color: #EAB308;
+        }
+
+        /* Features/Vorteile Section */
+        .features {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-subtitle {
+            color: var(--secondary-blue);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            color: var(--primary-blue);
+            font-weight: 800;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: var(--white);
+            border-color: var(--secondary-blue);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #E0F2FE, #BAE6FD);
+            color: var(--primary-blue);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-blue);
+        }
+
+        .feature-card p {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--secondary-blue);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .service-header i {
+            font-size: 1.8rem;
+            color: var(--secondary-blue);
+        }
+
+        .service-header h3 {
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+        }
+
+        .service-card p {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list li {
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-list li i {
+            color: #10B981;
+            font-size: 0.8rem;
+        }
+
+        /* Reviews / Testimonials */
+        .reviews {
+            background: var(--white);
+            padding: 5rem 2rem;
+        }
+
+        .reviews-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            position: relative;
+        }
+
+        .stars {
+            color: #F59E0B;
+            margin-bottom: 1rem;
+        }
+
+        .review-card p {
+            font-style: italic;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Calculator / Form Section */
+        .calculator-section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .calc-wrapper {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark-text);
+        }
+
+        input, select, textarea {
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background: var(--light-bg);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--secondary-blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(2, 136, 209, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(2, 136, 209, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 136, 209, 0.4);
+        }
+
+        /* Service Area Banner */
+        .service-area {
+            background: linear-gradient(135deg, var(--primary-blue), #0F4C64);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .area-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .area-tag {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Footer & Legal */
+        footer {
+            background: #0F172A;
+            color: #94A3B8;
+            padding: 4rem 2rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #94A3B8;
+            text-decoration: none;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .legal-box {
+            background: rgba(255,255,255,0.03);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #1E293B;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full {
+                grid-column: span 1;
+            }
+            nav ul {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-badge">E | R</div>
+                <div class="logo-text">
+                    Easy.Ristevski UG
+                    <span>(haftungsbeschränkt)</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#leistungen">Leistungen</a></li>
+                    <li><a href="#vorteile">Über Uns</a></li>
+                    <li><a href="#bewertungen">Bewertungen</a></li>
+                    <li><a href="#angebot" class="btn-nav"><i class="fa-solid fa-paper-plane"></i> Angebot anfordern</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-halved"></i> Ihr Partner für Sauberkeit in Nürnberg & Umgebung
+                </div>
+                <h1>Mehr Zeit für das <span>Wesentliche</span></h1>
+                <p>Professionelle Reinigung & Gebäudeservice mit System – zuverlässig, gründlich, diskret und vollversichert.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-award"></i>
+                        <div>Qualität & Erfahrung</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>100% Zuverlässig</div>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#angebot" class="btn-primary"><i class="fa-solid fa-calculator"></i> Gratis Angebot einholen</a>
+                    <a href="tel:01631759832" class="btn-secondary"><i class="fa-solid fa-phone"></i> 0163 1759832</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="hero-card-main">
+                    <div style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h3 style="text-align: center; color: var(--primary-blue); margin-bottom: 0.5rem; font-size: 1.5rem;">Glanzleistung garantiert</h3>
+                    <p style="text-align: center; color: var(--muted-text); font-size: 0.95rem;">Egal ob Büro, Treppenhaus oder Fenster – wir sorgen für makellose Sauberkeit in Ihrem Objekt.</p>
+                    
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; text-align: center;">
+                        <div>
+                            <strong style="display: block; color: var(--primary-blue); font-size: 1.2rem;">Kostenlos</strong>
+                            <span style="font-size: 0.8rem; color: var(--muted-text);">Besichtigung</span>
+                        </div>
+                        <div>
+                            <strong style="display: block; color: var(--primary-blue); font-size: 1.2rem;">Schnell</strong>
+                            <span style="font-size: 0.8rem; color: var(--muted-text);">Rückmeldung</span>
+                        </div>
+                        <div>
+                            <strong style="display: block; color: var(--primary-blue); font-size: 1.2rem;">Faire</strong>
+                            <span style="font-size: 0.8rem; color: var(--muted-text);">Preise</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-badge">
+                    <i class="fa-solid fa-star"></i>
+                    <div>
+                        <strong style="display:block; font-size:0.9rem;">Höchste Kundenzufriedenheit</strong>
+                        <span style="font-size:0.8rem; color: var(--muted-text);">4.9/5 Sternen in Bayern</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vorteile Section -->
+    <section class="features" id="vorteile">
+        <div class="section-header">
+            <div class="section-subtitle">Warum Easy.Ristevski?</div>
+            <h2 class="section-title">Ihre Vorteile bei unserer Reinigungsagentur</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-check-double"></i></div>
+                <h3>Qualität & Erfahrung</h3>
+                <p>Erfahrenes Reinigungspersonal sorgt mit geschultem Blick für makellose Ergebnisse bei jedem Einsatz.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
+                <h3>Individualität</h3>
+                <p>Passgenaue Reinigungskonzepte abgestimmt auf Ihre Wünsche, Räumlichkeiten und Zeitpläne.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <h3>Höchste Zuverlässigkeit</h3>
+                <p>Pünktlichkeit, Diskretion und Termintreue stehen bei unseren Mitarbeitern an oberster Stelle.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-face-smile"></i></div>
+                <h3>100% Zufriedenheit</h3>
+                <p>Wir arbeiten gründlich und nach festem System. Erst wenn Sie zufrieden sind, sind wir es auch.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="leistungen">
+        <div class="section-header">
+            <div class="section-subtitle">Unser Portfolio</div>
+            <h2 class="section-title">Umfassende Gebäudereinigung & Service</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <i class="fa-solid fa-building-user"></i>
+                        <h3>Büro- & Gewerbereinigung</h3>
+                    </div>
+                    <p>Repräsentative und hygienisch saubere Arbeitsräume steigern das Wohlbefinden und die Produktivität.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Schreibtische & Arbeitsplätze</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Sanitäranlagen & Küchen</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Regelmäßige Unterhaltsreinigung</li>
+                    </ul>
+                </div>
+                <a href="#angebot" class="btn-secondary" style="text-align: center; justify-content: center;">Angebot anfragen</a>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                        <h3>Fenster- & Glasreinigung</h3>
+                    </div>
+                    <p>Streifenfreier Durchblick für Ihre Fenster, Glasfronten, Wintergärten und Rahmen.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Scheiben & Rahmenreinigung</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Schaufenster & Glasfassaden</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Innen- und Außenreinigung</li>
+                    </ul>
+                </div>
+                <a href="#angebot" class="btn-secondary" style="text-align: center; justify-content: center;">Angebot anfragen</a>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <i class="fa-solid fa-broom"></i>
+                        <h3>Gebäude- & Eingangsreinigung</h3>
+                    </div>
+                    <p>Der erste Eindruck zählt! Wir pflegen Treppenhäuser, Flure, Eingänge und Kellerbereiche.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Treppenhausreinigung</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Empfangsbereiche</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Grundreinigungen</li>
+                    </ul>
+                </div>
+                <a href="#angebot" class="btn-secondary" style="text-align: center; justify-content: center;">Angebot anfragen</a>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <i class="fa-solid fa-tree"></i>
+                        <h3>Gartenarbeiten & Außengelände</h3>
+                    </div>
+                    <p>Gepflegte Grünanlagen rund um Ihr Objekt für ein ansprechendes Erscheinungsbild.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Rasenmähen & Heckenschnitt</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Unkraut- & Laubbeseitigung</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Weg- & Hofreinigung</li>
+                    </ul>
+                </div>
+                <a href="#angebot" class="btn-secondary" style="text-align: center; justify-content: center;">Angebot anfragen</a>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <i class="fa-solid fa-snowflake"></i>
+                        <h3>Winterdienst</h3>
+                    </div>
+                    <p>Sicherheit bei Schnee und Eis nach gesetzlichen Vorgaben für Eigentümer und Firmen.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Schnee- & Eisbeseitigung</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Streudienst & Glättebekämpfung</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Haftungssicherheit</li>
+                    </ul>
+                </div>
+                <a href="#angebot" class="btn-secondary" style="text-align: center; justify-content: center;">Angebot anfragen</a>
+            </div>
+
+            <div class="service-card" style="background: linear-gradient(135deg, #E0F2FE, #F0F9FF); border-color: var(--secondary-blue);">
+                <div>
+                    <div class="service-header">
+                        <i class="fa-solid fa-handshake"></i>
+                        <h3>Sonderleistungen</h3>
+                    </div>
+                    <p>Sie haben spezielle Anforderungen? Wir erstellen Ihnen gerne ein individuelles Paket.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Bau- & Endreinigung</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Praxen & Sonderobjekte</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Flexible Turnusse</li>
+                    </ul>
+                </div>
+                <a href="#angebot" class="btn-primary" style="text-align: center; justify-content: center;">Sonderanfrage stellen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="bewertungen">
+        <div class="section-header">
+            <div class="section-subtitle">Kundenstimmen</div>
+            <h2 class="section-title">Das sagen unsere zufriedenen Kunden</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Herr Ristevski und sein Team reinigen unser Firmenbüro in Nürnberg seit Monaten. Extrem pünktlich, gründlich und sehr höflich. Absolut empfehlenswert!"</p>
+                <div class="reviewer-info">
+                    <div class="avatar">M.S.</div>
+                    <div>
+                        <strong>Kanzlei & Bürobetreiber</strong>
+                        <span style="display:block; font-size:0.8rem; color:var(--muted-text);">Nürnberg</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Klasse Treppenhausreinigung und Winterdienst für unsere Eigentümergemeinschaft. Keine Beschwerden mehr von den Mietern. Top Job!"</p>
+                <div class="reviewer-info">
+                    <div class="avatar">H.W.</div>
+                    <div>
+                        <strong>Hausverwaltung</strong>
+                        <span style="display:block; font-size:0.8rem; color:var(--muted-text);">Fürth / Nürnberg</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Sehr schnelle Rückmeldung auf mein Online-Angebot. Die Fensterreinigung war perfekt und der Preis absolut fair. Gerne wieder!"</p>
+                <div class="reviewer-info">
+                    <div class="avatar">S.K.</div>
+                    <div>
+                        <strong>Privatkunde</strong>
+                        <span style="display:block; font-size:0.8rem; color:var(--muted-text);">Erlangen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator / Interactive Form Section -->
+    <section class="calculator-section" id="angebot">
+        <div class="calc-wrapper">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <div class="section-subtitle">Kostenlos & Unverbindlich</div>
+                <h2 class="section-title">Reinigungsangebot anfordern</h2>
+                <p style="color: var(--muted-text); margin-top: 0.5rem;">Füllen Sie das Formular aus – Sie erhalten Ihr Angebot direkt an Ihre E-Mail-Adresse!</p>
+            </div>
+
+            <form action="mailto:easy.ristevskiug@gmail.com" method="post" enctype="text/plain">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name"><i class="fa-solid fa-user"></i> Vor- & Nachname / Firma *</label>
+                        <input type="text" id="name" name="Name_Firma" placeholder="z. B. Max Mustermann" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><i class="fa-solid fa-envelope"></i> E-Mail Adresse *</label>
+                        <input type="email" id="email" name="Email" placeholder="ihre@email.de" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone"><i class="fa-solid fa-phone"></i> Telefonnummer *</label>
+                        <input type="tel" id="phone" name="Telefon" placeholder="z. B. 0163 1759832" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service"><i class="fa-solid fa-list-check"></i> Art der Reinigung *</label>
+                        <select id="service" name="Reinigungsart" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="Bueroreinigung">Büro- / Unterhaltsreinigung</option>
+                            <option value="Fensterreinigung">Fenster- & Glasreinigung</option>
+                            <option value="Gebaeudereinigung">Gebäude- / Treppenhausreinigung</option>
+                            <option value="Gartenarbeiten">Gartenarbeiten / Außengelände</option>
+                            <option value="Winterdienst">Winterdienst</option>
+                            <option value="Kombipaket">Kombipaket / Komplettbetreuung</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area"><i class="fa-solid fa-ruler-combined"></i> Ca. Fläche (m²)</label>
+                        <input type="number" id="area" name="Flaeche_m2" placeholder="z. B. 150">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location"><i class="fa-solid fa-location-dot"></i> Ort / PLZ</label>
+                        <input type="text" id="location" name="Ort" placeholder="z. B. 90461 Nürnberg">
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="message"><i class="fa-solid fa-comment-dots"></i> Nachricht / Besondere Wünsche</label>
+                        <textarea id="message" name="Nachricht" rows="4" placeholder="Beschreiben Sie kurz Ihr Objekt oder gewünschte Reinigungsintervalle..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Jetzt Angebot per E-Mail anfordern
+                </button>
+                <p style="text-align: center; font-size: 0.8rem; color: var(--muted-text); margin-top: 1rem;">
+                    <i class="fa-solid fa-lock"></i> Ihre Daten werden vertraulich behandelt und nur zur Angebotserstellung verwendet.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Service Area Banner -->
+    <section class="service-area">
+        <h2 style="font-size: 2rem; font-weight: 800;">Einsatzgebiet: Nürnberg & Ganz Bayern</h2>
+        <p style="margin-top: 0.5rem; opacity: 0.9;">Wir sind für Sie lokal vor Ort im Einsatz!</p>
+        <div class="area-tags">
+            <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Nürnberg</span>
+            <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Fürth</span>
+            <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Erlangen</span>
+            <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Schwabach</span>
+            <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Lauf an der Pegnitz</span>
+            <span class="area-tag"><i class="fa-solid fa-location-dot"></i> Umkreis & ganz Bayern</span>
+        </div>
+    </section>
+
+    <!-- Footer & Impressum (Rechtssicher für Deutschland) -->
+    <footer id="rechtliches">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo-badge" style="display:inline-block; margin-bottom: 1rem;">E | R</div>
+                <h4 style="margin-bottom: 0.5rem;">Easy.Ristevski UG</h4>
+                <p style="font-size: 0.85rem;">(haftungsbeschränkt)</p>
+                <p style="margin-top: 1rem;">Ihr zuverlässiger Partner für professionelle Gebäudereinigung, Bürobetreuung, Glasreinigung und Winterdienst.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kontakt & Service</h4>
+                <p><i class="fa-solid fa-location-dot" style="color:var(--secondary-blue);"></i> Schönweißstraße 26, 90461 Nürnberg</p>
+                <p><i class="fa-solid fa-phone" style="color:var(--secondary-blue);"></i> <a href="tel:01631759832" style="display:inline;">0163 1759832</a></p>
+                <p><i class="fa-solid fa-envelope" style="color:var(--secondary-blue);"></i> <a href="mailto:easy.ristevskiug@gmail.com" style="display:inline;">easy.ristevskiug@gmail.com</a></p>
+                <p><i class="fa-solid fa-clock" style="color:var(--secondary-blue);"></i> Mo - Sa: 07:00 - 19:00 Uhr</p>
+            </div>
+
+            <div class="footer-col" style="grid-column: span 2;">
+                <h4>Impressum & Rechtliche Angaben (gemäß § 5 DDG)</h4>
+                <div class="legal-box">
+                    <p><strong>Angaben gemäß § 5 DDG:</strong></p>
+                    <p><strong>Easy.Ristevski UG (haftungsbeschränkt)</strong><br>
+                    Schönweißstraße 26<br>
+                    90461 Nürnberg, Deutschland</p>
+                    <br>
+                    <p><strong>Vertreten durch den Geschäftsführer:</strong> Trajche Ristevski</p>
+                    <p><strong>Registereintrag:</strong> Handelsregister</p>
+                    <p><strong>Registergericht:</strong> Amtsgericht Nürnberg | <strong>Registernummer:</strong> HRB 45502</p>
+                    <p><strong>Kontakt:</strong> Telefon: 0163 1759832 | E-Mail: easy.ristevskiug@gmail.com</p>
+                    <br>
+                    <p><strong>Datenschutz-Hinweis:</strong> Personenbezogene Daten (wie Name, E-Mail-Adresse), die über das Kontaktformular übermittelt werden, dienen ausschließlich der Bearbeitung Ihrer Anfrage und der Erstellung eines Reinigungsangebots gemäß DSGVO.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Easy.Ristevski UG (haftungsbeschränkt). Alle Rechte vorbehalten. | Design & Entwicklung für max. Performance & Sauberkeit.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

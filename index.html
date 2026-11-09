@@ -45,15 +45,17 @@
             overflow-x: hidden;
         }
 
+        /* Volle Bildschirmbreite statt fester Box */
         .container {
-            max-width: 1400px;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 5%;
             margin: 0 auto;
-            padding: 0 32px;
         }
 
         /* Header / Nav */
         header {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(16px);
             position: fixed;
             top: 0;
@@ -67,6 +69,7 @@
             justify-content: space-between;
             align-items: center;
             height: 90px;
+            padding: 0 4%;
         }
 
         .logo {
@@ -147,7 +150,7 @@
 
         /* Hero */
         .hero {
-            padding: 170px 0 100px;
+            padding: 170px 4% 100px 4%;
             background: radial-gradient(circle at 90% 10%, #e0f2fe 0%, #ffffff 50%, var(--bg) 100%);
         }
 
@@ -156,6 +159,8 @@
             grid-template-columns: 1.1fr 0.9fr;
             gap: 60px;
             align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
         .badge {
@@ -209,12 +214,12 @@
 
         /* Sektionen */
         section {
-            padding: 120px 0;
+            padding: 120px 4%;
         }
 
         .section-header {
             text-align: center;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 70px;
         }
 
@@ -241,6 +246,8 @@
             grid-template-columns: 1fr 1.1fr;
             gap: 80px;
             align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
         .about-content h3 {
@@ -291,6 +298,11 @@
         }
 
         /* Services */
+        .services-wrapper {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -366,6 +378,7 @@
         .reviews-section {
             background: var(--surface);
             overflow: hidden;
+            padding: 120px 0;
         }
 
         .marquee {
@@ -373,7 +386,7 @@
             overflow: hidden;
             user-select: none;
             gap: 30px;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
         }
 
         .marquee-content {
@@ -449,7 +462,7 @@
             padding: 60px;
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -502,7 +515,7 @@
         footer {
             background: var(--primary);
             color: white;
-            padding: 50px 0;
+            padding: 50px 4%;
             text-align: center;
         }
 
@@ -530,7 +543,7 @@
 
     <!-- Navigationsleiste -->
     <header>
-        <div class="container nav-wrapper">
+        <div class="nav-wrapper">
             <a href="#" class="logo"><i class="fa-solid fa-sparkles"></i> E / <span>R</span></a>
             <nav>
                 <a href="#start">Start</a>
@@ -542,9 +555,9 @@
         </div>
     </header>
 
-    <!-- Hero Bereich -->
+    <!-- Hero Bereich mit deinem Teppichreinigungs-Bild -->
     <section id="start" class="hero">
-        <div class="container hero-grid">
+        <div class="hero-grid">
             <div>
                 <div class="badge">
                     <i class="fa-solid fa-gift"></i> 20% Rabatt auf Ihre erste Grundreinigung
@@ -554,21 +567,22 @@
                 <a href="#kontakt" class="btn" style="padding: 18px 36px; font-size: 18px;">Jetzt Angebot anfordern</a>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=1000&q=80" alt="Professionelle Gebäudereinigung Nürnberg">
+                <img src="Chapin Carpet Cleaning Company.jpg" alt="Professionelle Gebäudereinigung Nürnberg">
             </div>
         </div>
     </section>
 
-    <!-- Über uns Sektion -->
+    <!-- Über uns Sektion mit deinem Büroreinigungs-Bild und erweitertem Text -->
     <section id="ueber-uns" class="about-section">
-        <div class="container about-grid">
+        <div class="about-grid">
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1000&q=80" alt="Gebäudereinigung Team">
+                <img src="renkilde-cleaning-8660309_1920.jpg" alt="Gebäudereinigung Team">
             </div>
             <div class="about-content">
                 <h3>Über E / R Reinigung & Gebäudeservice</h3>
-                <p>Als <strong>familiengeführtes Unternehmen</strong> in Nürnberg stehen wir seit <strong>über 10 Jahren</strong> für höchste Sauberkeit, Verlässlichkeit und faire Konditionen.</p>
-                <p>Bei uns steht die persönliche Betreuung an erster Stelle: Wir entwickeln maßgeschneiderte Reinigungskonzepte für Privat- und Gewerbekunden. Unser engagiertes Team arbeitet mit modernen Reinigungsverfahren und größter Sorgfalt für den Werterhalt Ihrer Objekte.</p>
+                <p>Mit <strong>über 10 Jahren fundierter Berufserfahrung</strong> in der Reinigungsbranche stehen wir in Nürnberg und Umgebung für kompromisslose Qualität, absolute Verlässlichkeit und höchste Kundenzufriedenheit.</p>
+                <p>Sauberkeit ist Vertrauenssache. Aus diesem Grund legen wir größten Wert auf geschultes Personal, umweltfreundliche und schonende Reinigungsmittel sowie perfekt auf Ihre Bedürfnisse abgestimmte Reinigungsintervalle. Egal ob gewerbliche Büroflächen, Praxen, Glasfassaden oder private Immobilien – wir packen gründlich an, damit Sie sich rundum wohlfühlen und sich auf Ihr Kerngeschäft konzentrieren können.</p>
+                <p>Unser Anspruch ist es, durch kontinuierliche Zuverlässigkeit, transparente Absprachen und makellose Ergebnisse langfristige Partnerschaften mit unseren Kunden aufzubauen.</p>
                 
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -577,7 +591,7 @@
                     </div>
                     <div class="stat-card">
                         <h4>100%</h4>
-                        <p>Familiengeführt</p>
+                        <p>Einsatz & Qualität</p>
                     </div>
                     <div class="stat-card">
                         <h4>500+</h4>
@@ -590,7 +604,7 @@
 
     <!-- Dienstleistungen -->
     <section id="leistungen">
-        <div class="container">
+        <div class="services-wrapper">
             <div class="section-header">
                 <h2>Unsere Dienstleistungen</h2>
                 <p>Maßgeschneiderte Reinigungslösungen für Gewerbe und Privat</p>
@@ -658,7 +672,7 @@
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p class="review-text">„Familiengeführt merkt man einfach an der Qualität und der persönlichen Betreuung. Sehr faire Preise!“</p>
+                        <p class="review-text">„Man merkt sofort die 10 Jahre Erfahrung an der Qualität und der perfekten Ausführung. Sehr zu empfehlen!“</p>
                     </div>
                     <div class="review-author">Andreas W., Nürnberg</div>
                 </div>
@@ -697,7 +711,7 @@
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p class="review-text">„Familiengeführt merkt man einfach an der Qualität und der persönlichen Betreuung. Sehr faire Preise!“</p>
+                        <p class="review-text">„Man merkt sofort die 10 Jahre Erfahrung an der Qualität und der perfekten Ausführung. Sehr zu empfehlen!“</p>
                     </div>
                     <div class="review-author">Andreas W., Nürnberg</div>
                 </div>
@@ -747,38 +761,4 @@
                         <input type="tel" name="Telefon" placeholder="0911 ...">
                     </div>
                     <div class="form-group">
-                        <label>Fläche ca. in m² *</label>
-                        <input type="number" name="Flaeche_m2" placeholder="z. B. 120" required>
-                    </div>
-                    <div class="form-group form-full">
-                        <label>Gewünschte Leistung *</label>
-                        <select name="Leistung" required>
-                            <option value="Büroreinigung">Büroreinigung</option>
-                            <option value="Glas- & Fensterreinigung">Glas- & Fensterreinigung</option>
-                            <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
-                            <option value="Grundreinigung">Grundreinigung</option>
-                            <option value="Treppenhausreinigung">Treppenhausreinigung</option>
-                            <option value="Gebäudeservice">Gebäudeservice</option>
-                        </select>
-                    </div>
-                    <div class="form-group form-full">
-                        <label>Ihre Nachricht</label>
-                        <textarea name="Nachricht" rows="4" placeholder="Beschreiben Sie kurz Ihr Objekt oder Ihre Anforderung..."></textarea>
-                    </div>
-                    <div class="form-full">
-                        <button type="submit" class="btn" style="width: 100%; justify-content: center; padding: 18px; font-size: 17px;">Anfrage jetzt absenden</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fußzeile -->
-    <footer>
-        <div class="container">
-            <p>© 2026 E / R Reinigung & Gebäudeservice Nürnberg. Alle Rechte vorbehalten.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                        <label>Fläche ca

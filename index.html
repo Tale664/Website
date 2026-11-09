@@ -4,503 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E I R Reinigung & Gebäudeservice Nürnberg</title>
-    <!-- Google Fonts laden -->
+    
+    <!-- Google Fonts & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --primary: #0f172a;
-            --brand-blue: #2563eb;
-            --brand-soft: #3b82f6;
-            --bg-light: #f8fafc;
-            --bg-card: #ffffff;
-            --text-dark: #334155;
-            --text-light: #64748b;
+            --primary-hover: #1e293b;
+            --accent: #2563eb;
+            --accent-soft: #eff6ff;
+            --bg: #fafafa;
+            --surface: #ffffff;
+            --text: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 16px;
+            --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        html {
-            scroll-snap-type: y mandatory;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        section {
-            min-height: 100vh;
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
-            padding: 120px 40px 60px 40px;
-            position: relative;
-        }
-
-        /* Navigation Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1600px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Nav */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            width: 100%;
+            height: 80px;
         }
 
-        .logo-text {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--brand-blue);
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
             letter-spacing: 2px;
-            animation: gentlePulse 3s infinite ease-in-out;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        @keyframes gentlePulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+        .logo span {
+            color: var(--accent);
         }
 
         nav {
             display: flex;
             align-items: center;
+            gap: 32px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-left: 30px;
-            transition: all 0.3s;
+            color: var(--text-muted);
+            font-weight: 500;
             font-size: 15px;
+            transition: color 0.2s;
         }
 
-        nav a:hover { color: var(--brand-blue); }
+        nav a:hover {
+            color: var(--accent);
+        }
 
-        .btn-nav {
-            background: var(--brand-blue);
+        .btn {
+            background: var(--accent);
             color: white !important;
-            padding: 10px 24px;
+            padding: 12px 24px;
             border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
-        }
-
-        .btn-nav:hover { background: var(--primary); transform: translateY(-2px); }
-
-        .wide-container {
-            width: 100%;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        /* Hero Startbereich */
-        .hero {
-            background: radial-gradient(circle at top right, #e0f2fe 0%, #ffffff 70%);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: 56px;
-            color: var(--primary);
-            line-height: 1.15;
-            margin-bottom: 25px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .hero-content p {
-            font-size: 20px;
-            color: var(--text-light);
-            margin-bottom: 35px;
-            line-height: 1.6;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 40px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-        }
-
-        /* 20% Rabatt Banner */
-        .promo-banner {
-            background: linear-gradient(90deg, #1e40af 0%, #2563eb 100%);
-            color: white;
-            padding: 30px 40px;
-            text-align: center;
-            font-size: 22px;
-            border-radius: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .promo-badge {
-            background: #ef4444;
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 15px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
-        }
-
-        /* Dienstleistungen Sektion */
-        .services-section {
-            background: var(--bg-light);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 40px;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .service-card {
-            background: var(--bg-card);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid #f1f5f9;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(37, 99, 235, 0.1);
-        }
-
-        .service-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-
-        .service-info { padding: 25px; flex-grow: 1; }
-        .service-info h3 { font-size: 18px; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
-        .service-info p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
-
-        /* Kostenloses Angebot Formular */
-        .form-section {
-            background: #f1f5f9;
-        }
-
-        .form-wrapper {
-            max-width: 850px;
-            margin: 0 auto;
-            background: white;
-            padding: 50px;
-            border-radius: 40px;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.03);
-            width: 100%;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .form-group { display: flex; flex-direction: column; gap: 8px; }
-        .form-group-full { grid-column: span 2; display: flex; flex-direction: column; gap: 8px; }
-        
-        label { font-weight: 600; color: var(--primary); font-size: 14px; }
-        
-        input, select, textarea {
-            padding: 14px 18px;
-            border: 2px solid #e2e8f0;
-            border-radius: 14px;
-            font-size: 15px;
-            outline: none;
-            transition: all 0.3s;
-            background: #f8fafc;
-            width: 100%;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--brand-blue);
-            background: white;
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
-        }
-
-        .btn-submit {
-            grid-column: span 2;
-            background: var(--brand-blue);
-            color: white;
-            border: none;
-            padding: 18px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 14px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
-            margin-top: 5px;
-        }
-
-        .btn-submit:hover { background: var(--primary); transform: translateY(-2px); }
-
-        /* Kundenbewertungen */
-        .reviews-section { 
-            background: var(--white);
-        }
-        
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .review-card {
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 28px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
-            border-top: 6px solid var(--brand-blue);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .stars { color: #f59e0b; margin-bottom: 15px; font-size: 20px; }
-        .review-text { font-style: italic; color: var(--text-dark); font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
-        .review-user { font-weight: 700; color: var(--primary); font-size: 15px; }
-
-        /* Fußzeile */
-        footer { 
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            left: 0;
-            background: var(--primary); 
-            color: white; 
-            padding: 25px 20px; 
-            text-align: center; 
-        }
-        .footer-links a { color: #94a3b8; text-decoration: none; margin: 0 15px; transition: color 0.3s; font-size: 14px; }
-        .footer-links a:hover { color: white; }
-
-        /* Responsive Anpassungen */
-        @media (max-width: 1200px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-            section { height: auto; min-height: 100vh; }
-        }
-
-        @media (max-width: 900px) {
-            .services-grid, .reviews-grid, .form-grid { grid-template-columns: 1fr; }
-            .form-group-full, .btn-submit { grid-column: span 1; }
-            .hero-content h1 { font-size: 38px; }
-            .nav-container { padding: 15px 20px; }
-            nav a { margin-left: 15px; font-size: 14px; }
-            .form-wrapper { padding: 30px 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header / Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo-text">E I R</div>
-            <nav>
-                <a href="#start">Start</a>
-                <a href="#leistungen">Leistungen</a>
-                <a href="#angebot" class="btn-nav">Angebot</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Sektion 1: Hero Start -->
-    <section id="start" class="hero">
-        <div class="wide-container">
-            <div class="promo-banner">
-                <div><span class="promo-badge">Aktion</span> <strong>20% Rabatt</strong> auf Ihre erste Grundreinigung in Nürnberg!</div>
-            </div>
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>Professionelle Gebäudereinigung in Nürnberg</h1>
-                    <p>Ihr zuverlässiger Partner für makellose Sauberkeit in Büro, Praxis und Heim. Höchste Qualität, faire Preise und absolute Zuverlässigkeit.</p>
-                    <a href="#angebot" class="btn-nav" style="display: inline-block; padding: 16px 36px; font-size: 18px;">Kostenloses Angebot anfordern</a>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Gebäudereinigung Nürnberg">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sektion 2: Leistungen -->
-    <section id="leistungen" class="services-section">
-        <div class="wide-container">
-            <h2 class="section-title">Unsere Dienstleistungen</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Büroreinigung">
-                    <div class="service-info">
-                        <h3>Büroreinigung</h3>
-                        <p>Saubere Arbeitsplätze sorgen für ein besseres Betriebsklima und motivierte Mitarbeiter.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80" alt="Glasreinigung">
-                    <div class="service-info">
-                        <h3>Glas- & Fensterreinigung</h3>
-                        <p>Durchblick ohne Streifen für Fenster, Schaufenster und Glasfassaden.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=600&q=80" alt="Unterhaltsreinigung">
-                    <div class="service-info">
-                        <h3>Unterhaltsreinigung</h3>
-                        <p>Regelmäßige und gründliche Sauberkeit nach Ihren individuellen Zeitplänen.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Grundreinigung">
-                    <div class="service-info">
-                        <h3>Grundreinigung</h3>
-                        <p>Intensive Intensivreinigung bis in jede Ecke – ideal für Umzug oder Frühjahrsputz.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Treppenhausreinigung">
-                    <div class="service-info">
-                        <h3>Treppenhausreinigung</h3>
-                        <p>Der erste Eindruck zählt – gepflegte Hausflure für Eigentümer und Mieter.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Gebäudeservice">
-                    <div class="service-info">
-                        <h3>Gebäudeservice</h3>
-                        <p>Umfassender Service rund um Ihre Immobilie in Nürnberg und Umgebung.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sektion 3: Angebot Formular -->
-    <section id="angebot" class="form-section">
-        <div class="form-wrapper">
-            <h2 class="section-title" style="margin-bottom: 25px; font-size: 32px;">Kostenloses Angebot anfordern</h2>
-            <form class="form-grid">
-                <div class="form-group">
-                    <label>Ihr Name</label>
-                    <input type="text" placeholder="Max Mustermann" required>
-                </div>
-                <div class="form-group">
-                    <label>E-Mail-Adresse</label>
-                    <input type="email" placeholder="beispiel@mail.de" required>
-                </div>
-                <div class="form-group">
-                    <label>Telefonnummer</label>
-                    <input type="tel" placeholder="+49 911 ...">
-                </div>
-                <div class="form-group">
-                    <label>Gewünschte Leistung</label>
-                    <select>
-                        <option>Büroreinigung</option>
-                        <option>Glas- & Fensterreinigung</option>
-                        <option>Unterhaltsreinigung</option>
-                        <option>Grundreinigung</option>
-                        <option>Treppenhausreinigung</option>
-                        <option>Sonstiges</option>
-                    </select>
-                </div>
-                <div class="form-group-full">
-                    <label>Ihre Nachricht / Details</label>
-                    <textarea rows="4" placeholder="Teilen Sie uns Ihre Wünsche mit..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Jetzt unverbindlich anfragen</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Sektion 4: Bewertungen -->
-    <section class="reviews-section">
-        <div class="wide-container">
-            <h2 class="section-title">Das sagen unsere Kunden</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">„Absolut professionell! Unsere Büros in Nürnberg glänzen seit der Zusammenarbeit mit EIR Reinigung jeden Tag aufs Neue.“</p>
-                    </div>
-                    <div class="review-user">— Markus B., Nürnberg</div>
-                </div>
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">„Pünktlich, gründlich und sehr freundliches Personal. Die Fensterreinigung wurde perfekt durchgeführt.“</p>
-                    </div>
-                    <div class="review-user">— Sabine K., Fürth</div>
-                </div>
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">„Vom ersten Kontakt bis zur Ausführung lief alles reibungslos. Sehr zu empfehlen für die Treppenhausreinigung!“</p>
-                    </div>
-                    <div class="review-user">— Andreas W., Nürnberg</div>
-                </div>
-            </div>
-        </div>
-        <footer>
-            <div class="footer-links">
-                <a href="#">Impressum</a>
-                <a href="#">Datenschutz</a>
-                <a href="#">Kontakt</a>
-            </div>
-            <p style="margin-top: 10px; color: #64748b; font-size: 13px;">© 2026 E I R Reinigung & Gebäudeservice Nürnberg</p>
-        </footer>
-    </section>
-
-</body>
-</html>
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba

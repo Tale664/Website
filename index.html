@@ -104,4 +104,336 @@
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.2s;
-            box-shadow: 0 4px 12px rgba
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 0 100px;
+            background: radial-gradient(circle at 80% 20%, #e0f2fe 0%, transparent 40%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            object-fit: cover;
+            height: 480px;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: var(--surface);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-soft);
+        }
+
+        .card-icon {
+            width: 54px;
+            height: 54px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Form Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+
+        .form-card {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            font-size: 15px;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            background: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            color: #94a3b8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 36px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-full { grid-column: span 1; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo"><i class="fa-solid fa-sparkles"></i> E I R <span>Reinigung</span></a>
+            <nav>
+                <a href="#start">Start</a>
+                <a href="#leistungen">Leistungen</a>
+                <a href="#kontakt" class="btn"><i class="fa-solid fa-paper-plane"></i> Angebot anfordern</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="start" class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge">
+                    <i class="fa-solid fa-tag"></i> 20% Rabatt auf die Erstreinigung
+                </div>
+                <h1>Professionelle Gebäudereinigung in Nürnberg</h1>
+                <p>Erstklassige Sauberkeit für Unternehmen und Privatkunden. Zuverlässig, gründlich und zu fairen Konditionen.</p>
+                <a href="#kontakt" class="btn" style="padding: 16px 32px; font-size: 16px;">Jetzt kostenloses Angebot holen</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Reinigung Nürnberg">
+            </div>
+        </div>
+    </section>
+
+    <section id="leistungen" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Unsere Leistungen</h2>
+                <p>Maßgeschneiderte Reinigungskonzepte für Ihr Objekt</p>
+            </div>
+            <div class="services-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-building"></i></div>
+                    <h3>Büroreinigung</h3>
+                    <p>Saubere und hygienische Arbeitsumgebungen für Ihr Team und Ihre Kunden.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-window-maximize"></i></div>
+                    <h3>Glas- & Fensterreinigung</h3>
+                    <p>Streifenfreier Durchblick für Fenster, Fassaden und Schaufenster.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-broom"></i></div>
+                    <h3>Unterhaltsreinigung</h3>
+                    <p>Regelmäßige Pflege nach festen Intervallen – individuell angepasst.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-sparkles"></i></div>
+                    <h3>Grundreinigung</h3>
+                    <p>Tiefenreinigung für hartnäckige Verschmutzungen und Renovierungen.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-stairs"></i></div>
+                    <h3>Treppenhausreinigung</h3>
+                    <p>Ein gepflegter Eingangsbereich für Wohnanlagen und Gewerbeobjekte.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Gebäudeservice</h3>
+                    <p>Rundum-Betreuung für den Werterhalt Ihrer Immobilien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="contact-section">
+        <div class="container">
+            <div class="form-card">
+                <div class="section-header" style="margin-bottom: 30px;">
+                    <h2>Unverbindliches Angebot</h2>
+                    <p>Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden.</p>
+                </div>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Max Mustermann" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-Mail</label>
+                        <input type="email" placeholder="name@beispiel.de" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel" placeholder="0911 ...">
+                    </div>
+                    <div class="form-group">
+                        <label>Leistung</label>
+                        <select>
+                            <option>Büroreinigung</option>
+                            <option>Glasreinigung</option>
+                            <option>Unterhaltsreinigung</option>
+                            <option>Grundreinigung</option>
+                            <option>Treppenhausreinigung</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-full">
+                        <label>Nachricht</label>
+                        <textarea rows="4" placeholder="Kurze Beschreibung des Objekts oder Ihrer Wünsche..."></textarea>
+                    </div>
+                    <div class="form-full">
+                        <button type="submit" class="btn" style="width: 100%; justify-content: center; padding: 16px;">Anfrage absenden</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 E I R Reinigung & Gebäudeservice Nürnberg. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -19,9 +19,9 @@
             --accent-soft: #eff6ff;
             --bg: #f8fafc;
             --surface: #ffffff;
-            --text: #334155;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
+            --text: #1e293b;
+            --text-muted: #475569;
+            --border: #cbd5e1;
             --radius: 20px;
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -45,7 +45,7 @@
             overflow-x: hidden;
         }
 
-        /* Volle Bildschirmbreite statt fester Box */
+        /* Volle Bildschirmbreite */
         .container {
             width: 100%;
             max-width: 100%;
@@ -374,7 +374,7 @@
             font-size: 16px;
         }
 
-        /* Endlos fließende Kacheln bei Bewertungen */
+        /* Bewertungen Karussell */
         .reviews-section {
             background: var(--surface);
             overflow: hidden;
@@ -479,7 +479,7 @@
         .form-group label {
             display: block;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 15px;
             margin-bottom: 10px;
             color: var(--primary);
         }
@@ -497,10 +497,16 @@
             padding: 16px 20px;
             border-radius: 12px;
             border: 2px solid var(--border);
-            background: var(--bg);
+            background: var(--surface);
+            color: var(--text);
             font-size: 16px;
             outline: none;
             transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #94a3b8;
         }
 
         .form-group input:focus, 
@@ -555,7 +561,7 @@
         </div>
     </header>
 
-    <!-- Hero Bereich mit deinem Teppichreinigungs-Bild -->
+    <!-- Hero Bereich -->
     <section id="start" class="hero">
         <div class="hero-grid">
             <div>
@@ -567,16 +573,16 @@
                 <a href="#kontakt" class="btn" style="padding: 18px 36px; font-size: 18px;">Jetzt Angebot anfordern</a>
             </div>
             <div class="hero-image">
-                <img src="Chapin Carpet Cleaning Company.jpg" alt="Professionelle Gebäudereinigung Nürnberg">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80" alt="Professionelle Gebäudereinigung Nürnberg">
             </div>
         </div>
     </section>
 
-    <!-- Über uns Sektion mit deinem Büroreinigungs-Bild und erweitertem Text -->
+    <!-- Über uns Sektion -->
     <section id="ueber-uns" class="about-section">
         <div class="about-grid">
             <div class="hero-image">
-                <img src="renkilde-cleaning-8660309_1920.jpg" alt="Gebäudereinigung Team">
+                <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1000&q=80" alt="Gebäudereinigung Team">
             </div>
             <div class="about-content">
                 <h3>Über E / R Reinigung & Gebäudeservice</h3>
@@ -644,7 +650,7 @@
         </div>
     </section>
 
-    <!-- Bewertungen (Endloses Karussell von rechts nach links) -->
+    <!-- Bewertungen Karussell -->
     <section id="bewertungen" class="reviews-section">
         <div class="container" style="margin-bottom: 50px;">
             <div class="section-header" style="margin-bottom: 0;">
@@ -733,7 +739,7 @@
         </div>
     </section>
 
-    <!-- Formular mit FormSubmit für Benachrichtigungen an easy.ristevskiug@gmail.com -->
+    <!-- Formular -->
     <section id="kontakt" class="contact-section">
         <div class="container">
             <div class="form-card">
@@ -743,7 +749,6 @@
                 </div>
                 
                 <form class="form-grid" action="https://formsubmit.co/easy.ristevskiug@gmail.com" method="POST">
-                    <!-- Einstellungen für E-Mail Versand -->
                     <input type="hidden" name="_subject" value="Neue Angebotsanfrage - E/R Reinigung">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
@@ -761,4 +766,38 @@
                         <input type="tel" name="Telefon" placeholder="0911 ...">
                     </div>
                     <div class="form-group">
-                        <label>Fläche ca
+                        <label>Fläche ca. in m² *</label>
+                        <input type="number" name="Flaeche_m2" placeholder="z. B. 120" required>
+                    </div>
+                    <div class="form-group form-full">
+                        <label>Gewünschte Leistung *</label>
+                        <select name="Leistung" required>
+                            <option value="Büroreinigung">Büroreinigung</option>
+                            <option value="Glas- & Fensterreinigung">Glas- & Fensterreinigung</option>
+                            <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
+                            <option value="Grundreinigung">Grundreinigung</option>
+                            <option value="Treppenhausreinigung">Treppenhausreinigung</option>
+                            <option value="Gebäudeservice">Gebäudeservice</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-full">
+                        <label>Ihre Nachricht</label>
+                        <textarea name="Nachricht" rows="4" placeholder="Beschreiben Sie kurz Ihr Objekt oder Ihre Anforderung..."></textarea>
+                    </div>
+                    <div class="form-full">
+                        <button type="submit" class="btn" style="width: 100%; justify-content: center; padding: 18px; font-size: 17px;">Anfrage jetzt absenden</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fußzeile -->
+    <footer>
+        <div class="container">
+            <p>© 2026 E / R Reinigung & Gebäudeservice Nürnberg. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
